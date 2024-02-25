@@ -27,7 +27,7 @@
             <a href="#features" id="overlayLink">Features</a>
             <a href="#about" id="overlayLink">About</a>
             <a href="#speakers" id="overlayLink">Speakers</a>
-            <a href="#contacts" id="overlayLink">Contacts</a>
+            <a href="#contacts" id="overlayLink">Participate</a>
         </nav>
     </div>
     <div class="first-screen" id="main">
@@ -42,7 +42,7 @@
                     <a href="#features">Features</a>
                     <a href="#about">About</a>
                     <a href="#speakers">Speakers</a>
-                    <a href="#contacts">Contacts</a>
+                    <a href="#contacts">Participate</a>
                 </nav>
                 <img src="./assets/img/menu.svg" id="burger-menu"/>
             </header>
@@ -240,14 +240,21 @@
         <div class="contact-us-screen-wrapper">
             <div class="header-component">
                 <span></span>
-                <h3>Contact us</h3>
+                <h3>Participate</h3>
             </div>
 
             <form class="form">
-                <input placeholder="Name" id="name"/>
+                <input placeholder="First name" id="name"/>
+                <input placeholder="Last name" id="surname"/>
                 <input placeholder="Phone" id="phone"/>
-                <input placeholder="Email" id="email"/>
-                <textarea placeholder="Message" id="message"></textarea>
+                <input placeholder="Establishment" id="establishment"/>
+                <select id="select">
+                    <option>Java development</option>
+                    <option>Spring framework</option>
+                    <option>QA automation</option>
+                    <option>Project management</option>
+                    <option>Other</option>
+                </select>
                 <p id="success">Email sent successfully</p>
                 <p id="error">Error sending email</p>
                 <button type="button" onclick="sendEmail()" class="send-button">SEND</button>

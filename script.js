@@ -85,9 +85,10 @@ const onClick = () => {
 function sendEmail() {
     var templateParams = {
         name: document.getElementById('name').value,
+        surname: document.getElementById('surname').value,
         phone: document.getElementById('phone').value,
-        email: document.getElementById('email').value,
-        message: document.getElementById('message').value
+        establishment: document.getElementById('establishment').value,
+        select: document.getElementById('select').value
     };
 
     emailjs.send('service_x9bmopr', 'template_ljy5t5n', templateParams)
@@ -107,4 +108,3 @@ function sendEmail() {
 }
 
 onClick();
-showCards();
