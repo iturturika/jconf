@@ -5,24 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jconf</title>
     <link rel="stylesheet" href="./index.css"></link>
+    <script src="./script.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("L2GyfxHd6SUrMiSCb"); // Замените "user_youruserid" на ваш API ключ
+        })();
+    </script>
 </head>
 <body>
-    <div class="first-screen">
+    <div class="menu-overlay">
+        <header class="header">
+            <a href="#" class="logo">
+                <img src="./assets/img/logo1.png" width="80px"/>
+                <img src="./assets/img/logo2.png" width="80px"/>
+            </a>
+            <img src="./assets/img/close.svg" id="close-menu"/>
+        </header>
+        <nav class="menu-overlay-nav-links">
+            <a href="#main" id="overlayLink">Main</a>
+            <a href="#features" id="overlayLink">Features</a>
+            <a href="#about" id="overlayLink">About</a>
+            <a href="#speakers" id="overlayLink">Speakers</a>
+            <a href="#contacts" id="overlayLink">Contacts</a>
+        </nav>
+    </div>
+    <div class="first-screen" id="main">
         <div class="wrapper">
             <header class="header">
-                <a href="#" class="logo">LOGO</a>
+                <a href="#" class="logo">
+                    <img src="./assets/img/logo1.png" width="80px"/>
+                    <img src="./assets/img/logo2.png" width="80px"/>
+                </a>
                 <nav class="nav-links">
-                    <p>Main</p>
-                    <p>Features</p>
-                    <p>About</p>
-                    <p>Speakers</p>
-                    <p>Contacts</p>
+                    <a href="#main">Main</a>
+                    <a href="#features">Features</a>
+                    <a href="#about">About</a>
+                    <a href="#speakers">Speakers</a>
+                    <a href="#contacts">Contacts</a>
                 </nav>
+                <img src="./assets/img/menu.svg" id="burger-menu"/>
             </header>
             <div class="main-header-section">
                 <div class="second-header">
                     <img src="./assets/img/Vector.svg"/>
-                    <h2>Moldova, Balti, nortek, Puskin, 38</h2>
+                    <h2>Moldova, Balti, nortek, Puskin, 40</h2>
                 </div>
                 <h1 class="main-header">
                     Balti Java Group MeetUp
@@ -32,7 +59,7 @@
         </div>
     </div>
 
-    <div class="features-screen">
+    <div class="features-screen" id="features">
         <div class="features-wrapper">
             <div class="header-component">
                 <span></span>
@@ -72,7 +99,7 @@
         </div>
     </div>
 
-    <div class="about-screen">
+    <div class="about-screen" id="about">
         <div class="about-screen-wrapper">
             <div class="header-component">
                 <span></span>
@@ -93,7 +120,7 @@
         </div>
     </div>
 
-    <div class="speakers-screen">
+    <div class="speakers-screen" id="speakers">
         <div class="speakers-screen-wrapper">
             <div class="header-component">
                 <span></span>
@@ -102,31 +129,114 @@
 
             <div class="speakers-section">
                 <div class="speaker-card">
+                    <div class="speaker-socials">
+                        <a href="#"><img src="./assets/img/facebook.svg" width="28px"/></a>
+                        <a href="#"><img src="./assets/img/instagram.svg" width="28px"/></a>
+                        <a href="#"><img src="./assets/img/youtube.svg" width="28px"/></a>
+                    </div>
                     <div class="speaker-info">
-                        <h5>Kate Anderson</h5>
-                        <p>Software developer</p>
+                        <h5>Anastasia Sersun</h5>
+                        <p>Java developer, @Pentalog;
+                            Java mentor @TechWomen Moldova;
+                            Business tracker</p>
                     </div>
                 </div>
-                <div class="speaker-card_disabled">
+                
+                <!--Вторая карточка-->
+                <div class="speaker-card_disabled" style="display: flex;" id="hidden-card1">
                     <p>?</p>
                 </div>
-                <div class="speaker-card_disabled">
+                <div class="speaker-card" style="display: none;" id="card1">
+                    <div class="speaker-socials">
+                        <a href="#"><img src="./assets/img/facebook.svg" width="28px"/></a>
+                        <a href="#"><img src="./assets/img/instagram.svg" width="28px"/></a>
+                        <a href="#"><img src="./assets/img/youtube.svg" width="28px"/></a>
+                    </div>
+                    <div class="speaker-info">
+                        <h5>Anastasia Sersun</h5>
+                        <p>Java developer, @Pentalog;
+                            Java mentor @TechWomen Moldova;
+                            Business tracker</p>
+                    </div>
+                </div>
+                
+                <!--Третья карточка-->
+                <div class="speaker-card_disabled" style="display: flex;" id="hidden-card2">
                     <p>?</p>
                 </div>
-                <div class="speaker-card_disabled">
+                <div class="speaker-card" style="display: none;" id="card2">
+                    <div class="speaker-socials">
+                        <a href="#"><img src="./assets/img/facebook.svg" width="28px"/></a>
+                        <a href="#"><img src="./assets/img/instagram.svg" width="28px"/></a>
+                        <a href="#"><img src="./assets/img/youtube.svg" width="28px"/></a>
+                    </div>
+                    <div class="speaker-info">
+                        <h5>Anastasia Sersun</h5>
+                        <p>Java developer, @Pentalog;
+                            Java mentor @TechWomen Moldova;
+                            Business tracker</p>
+                    </div>
+                </div>
+
+                <!--Четвертая карточка-->
+                <div class="speaker-card_disabled" style="display: flex;" id="hidden-card3">
                     <p>?</p>
                 </div>
-                <div class="speaker-card_disabled">
+                <div class="speaker-card" style="display: none;" id="card3">
+                    <div class="speaker-socials">
+                        <a href="#"><img src="./assets/img/facebook.svg" width="28px"/></a>
+                        <a href="#"><img src="./assets/img/instagram.svg" width="28px"/></a>
+                        <a href="#"><img src="./assets/img/youtube.svg" width="28px"/></a>
+                    </div>
+                    <div class="speaker-info">
+                        <h5>Anastasia Sersun</h5>
+                        <p>Java developer, @Pentalog;
+                            Java mentor @TechWomen Moldova;
+                            Business tracker</p>
+                    </div>
+                </div>
+
+                <!--Пятая карточка-->
+                <div class="speaker-card_disabled" style="display: flex;" id="hidden-card4">
                     <p>?</p>
                 </div>
-                <div class="speaker-card_disabled">
+                <div class="speaker-card" style="display: none;" id="card4">
+                    <div class="speaker-socials">
+                        <a href="#"><img src="./assets/img/facebook.svg" width="28px"/></a>
+                        <a href="#"><img src="./assets/img/instagram.svg" width="28px"/></a>
+                        <a href="#"><img src="./assets/img/youtube.svg" width="28px"/></a>
+                    </div>
+                    <div class="speaker-info">
+                        <h5>Anastasia Sersun</h5>
+                        <p>Java developer, @Pentalog;
+                            Java mentor @TechWomen Moldova;
+                            Business tracker</p>
+                    </div>
+                </div>
+
+                <!--Шестая карточка-->
+                <div class="speaker-card_disabled" style="display: flex;" id="hidden-card5">
                     <p>?</p>
                 </div>
+                <div class="speaker-card" style="display: none;" id="card5">
+                    <div class="speaker-socials">
+                        <a href="#"><img src="./assets/img/facebook.svg" width="28px"/></a>
+                        <a href="#"><img src="./assets/img/instagram.svg" width="28px"/></a>
+                        <a href="#"><img src="./assets/img/youtube.svg" width="28px"/></a>
+                    </div>
+                    <div class="speaker-info">
+                        <h5>Anastasia Sersun</h5>
+                        <p>Java developer, @Pentalog;
+                            Java mentor @TechWomen Moldova;
+                            Business tracker</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
 
-    <div class="contact-us-screen">
+    <div class="contact-us-screen" id="contacts">
         <div class="contact-us-screen-wrapper">
             <div class="header-component">
                 <span></span>
@@ -134,11 +244,13 @@
             </div>
 
             <form class="form">
-                <input placeholder="Name" />
-                <input placeholder="Phone" />
-                <input placeholder="Email" />
-                <textarea placeholder="Message"></textarea>
-                <button class="send-button">SEND</button>
+                <input placeholder="Name" id="name"/>
+                <input placeholder="Phone" id="phone"/>
+                <input placeholder="Email" id="email"/>
+                <textarea placeholder="Message" id="message"></textarea>
+                <p id="success">Email sent successfully</p>
+                <p id="error">Error sending email</p>
+                <button type="button" onclick="sendEmail()" class="send-button">SEND</button>
             </form>
         </div>
     </div>
@@ -167,12 +279,15 @@
     </div>
 
     <footer class="footer">
-        <a href="#" class="logo">LOGO</a>
+        <a href="#" class="logo" style="margin: 0 auto;">
+            <img src="./assets/img/logo1.png" width="80px"/>
+            <img src="./assets/img/logo2.png" width="80px"/>
+        </a>
         <div class="social-icons">
             <a href="#"><img src="./assets/img/facebook.svg" /></a>
             <a href="#"><img src="./assets/img/instagram.svg" /></a>
             <a href="#"><img src="./assets/img/youtube.svg" /></a>
-            <a href="#"><img src="./assets/img/link.svg" /></a>
+            <a href="https://www.meetup.com/balti-java-group/"><img src="./assets/img/link.svg" /></a>
         </div>
         <p>© 2024 Filosoft Company. All Rights Reserved</p>
     </footer>
