@@ -103,9 +103,10 @@ select {
 .first-screen{
     width: 100%;
     height: 100vh;
-    background-image: url('./assets/img/main-image.jpg');
+    background-image: url('./assets/img/main-image.jpeg');
     background-position: top right;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .wrapper{
@@ -306,8 +307,8 @@ select {
   height: 300px;
   background-color: #afafaf;
   display: flex;
+  flex-direction: column;
   align-items: flex-end;
-  background-image: url('./assets/img/first-speaker.png');
   transition: box-shadow .15s ease-in;
   position: relative;
 }
