@@ -79,4 +79,34 @@ const sendEmail = async (event) => {
     }
 }
 
+//таймер
+
+// Функция для обновления таймера
+function updateCountdown() {
+    const now = new Date().getTime();
+    const countdownDate = new Date("2024-03-23T11:00:00").getTime(); // Укажите вашу дату здесь
+    const distance = countdownDate - now;
+  
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    if(document.getElementById("days")){
+        document.getElementById("days").textContent = days;
+    }
+    if(document.getElementById("hours")){
+        document.getElementById("hours").textContent = hours;
+    }
+    if(document.getElementById("minutes")){
+        document.getElementById("minutes").textContent = minutes;
+    }
+
+  }
+
+// Обновление таймера каждую секунду
+setInterval(updateCountdown, 1000);
+
+// Инициализация таймера при загрузке страницы
+updateCountdown();
+  
+
 onClick();

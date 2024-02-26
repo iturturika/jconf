@@ -186,19 +186,26 @@ select {
 }
 
 .main-header-section{
+  display: flex;
+  flex-direction: column;
     width: 540px;
+    height: 100%;
 }
 
 .main-header{
     color: #fff;
     font-size: 64px;
     font-weight: 700;
+    margin-top: 0;
+    margin-bottom: auto;
 }
 
 .second-header{
     display: flex;
     column-gap: 10px;
     align-items: center;
+    margin-top: auto;
+    margin-bottom: 0;
 }
 
 .second-header h2{
@@ -219,6 +226,7 @@ select {
     width: 1170px;
     margin: 0 auto;
     padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 .header-component{
@@ -270,6 +278,7 @@ select {
   display: flex;
   flex-direction: column;
   width: 100%;
+  background-color: #241B70;
 }
 
 .about-screen-wrapper{
@@ -279,11 +288,13 @@ select {
   width: 1170px;
   margin: 0 auto;
   padding-top: 60px;
+  padding-bottom: 60px;
   row-gap: 40px;
 }
 
 .about-text{
   text-align: center;
+  color: #fff;
 }
 
 .speakers-screen{
@@ -479,11 +490,37 @@ select {
   color: #fff;
 }
 
+.countdown{
+  display: flex;
+  column-gap: 30px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.timer{
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+}
+
+.timer span {
+  color: #fff;
+  font-weight: 700;
+  font-size: 50px;
+  text-align: center;
+}
+
 /*Адаптив*/
 
 @media screen and (max-width: 1170px){
   .wrapper{
     width: 750px;
+  }
+
+  .first-screen{
+    background-position: 55% 50%;
   }
 
   .nav-links{
@@ -531,8 +568,17 @@ select {
     width: 550px;
   }
 
-  .first-screen{
-    background-position: 65% 50%;
+  .main-header{
+    margin-top: auto;
+  }
+
+  .second-header{
+    align-self: start;
+    margin-top: 30px;
+  }
+
+  .timer span {
+    font-size: 40px;
   }
 
   .nav-links{

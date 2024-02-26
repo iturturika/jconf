@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Balti Java Group MeetUp</title>
+    <title>Balti Java Meetup</title>
     <link rel="stylesheet" href="./index.css"></link>
     <script src="./script.js"></script>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
@@ -14,6 +14,9 @@
     </script>
     <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <meta name="description" content="JConf.md is perfect place for developers and IT professionals looking to enhance their skills and network with peers. Visit our page for event details, speaker lineup, and registration information.">
+    <link type="image/x-icon" href="./favicon.ico" rel="shortcut icon">
+    <link type="Image/x-icon" href="./favicon.ico" rel="icon">
 </head>
 <body>
     <div class="menu-overlay">
@@ -57,7 +60,17 @@
                     Balti Java Group MeetUp
                 </h1>
             </div>
-            <img src="./assets/img/arrow.svg" width="25px"/>
+            <div class="countdown" id="countdown">
+                <div class="timer">
+                  <span id="days"></span><br /> Days
+                </div>
+                <div class="timer">
+                  <span id="hours"></span><br /> Hours
+                </div>
+                <div class="timer">
+                  <span id="minutes"></span><br /> minutes
+                </div>
+            </div>
         </div>
     </div>
 
@@ -105,7 +118,7 @@
         <div class="about-screen-wrapper">
             <div class="header-component">
                 <span></span>
-                <h3>About</h3>
+                <h3 style="color: #fff;">About</h3>
             </div>
 
             <p class="about-text">
