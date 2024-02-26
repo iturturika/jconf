@@ -30,27 +30,36 @@ const onClick = () => {
 
 
 
-function sendEmail() {
-    const templateParams = {
-        name: document.getElementById('name').value,
-        surname: document.getElementById('surname').value,
-        phone: document.getElementById('phone').value,
-        establishment: document.getElementById('establishment').value,
-        select: document.getElementById('select').value
-    };
+const sendEmail = async (event) => {
+    try {
+        event.preventDefault();
+        let recaptchaResponse = grecaptcha.getResponse();
 
-    if(
-        templateParams.name.length === 0 || templateParams.surname.length === 0 || templateParams.phone.length === 0 || templateParams.establishment.length === 0 || templateParams.select.length === 0
-    ){
-        const notification = document.getElementById('empty');
-        notification.style.display = 'flex';
-        setTimeout(() => {
-            notification.style.display = 'none';
-        }, 2000)
-        var recaptchaResponse = grecaptcha.getResponse();
-        console.log(recaptchaResponse)
-    } else {
-        emailjs.send('service_x9bmopr', 'template_ljy5t5n', templateParams)
+        const templateParams = {
+            name: document.getElementById('name').value,
+            surname: document.getElementById('surname').value,
+            phone: document.getElementById('phone').value,
+            establishment: document.getElementById('establishment').value,
+            select: document.getElementById('select').value
+        };
+        
+        if(!recaptchaResponse){
+            const notification = document.getElementById('captcha');
+            notification.style.display = 'flex';
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 2000)
+        }
+
+        if(templateParams.name.length === 0 || templateParams.surname.length === 0 || templateParams.phone.length === 0 || templateParams.establishment.length === 0 || templateParams.select.length === 0){
+            const notification = document.getElementById('empty');
+            notification.style.display = 'flex';
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 2000)
+
+        } else {
+            emailjs.send('service_x9bmopr', 'template_ljy5t5n', templateParams)
             .then(function(response) {
                 const notification = document.getElementById('success');
                 notification.style.display = 'flex';
@@ -64,6 +73,9 @@ function sendEmail() {
                     notification.style.display = 'none';
                 }, 2000)
             });
+        }
+    } catch (err) {
+        console.log(err);
     }
 }
 

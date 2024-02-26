@@ -13,6 +13,7 @@
         })();
     </script>
     <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <div class="menu-overlay">
@@ -246,7 +247,7 @@
                 <h3>Participate</h3>
             </div>
 
-            <form class="form">
+            <form class="form" id="form">
                 <input placeholder="First name" id="name"/>
                 <input placeholder="Last name" id="surname"/>
                 <input placeholder="Phone" id="phone"/>
@@ -263,7 +264,7 @@
                 <p id="error">Error sending email</p>
                 <p id="empty">Please fill in all the fields</p>
                 <p id="captcha">Please complete the captcha</p>
-                <button type="button" onclick="sendEmail()" class="send-button">SEND</button>
+                <button onclick="sendEmail(event)" class="send-button">SEND</button>
             </form>
         </div>
     </div>
