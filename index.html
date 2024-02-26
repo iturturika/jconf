@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jconf</title>
+    <title>Balti Java Group MeetUp</title>
     <link rel="stylesheet" href="./index.css"></link>
     <script src="./script.js"></script>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
@@ -12,12 +12,13 @@
             emailjs.init("L2GyfxHd6SUrMiSCb"); // Замените "user_youruserid" на ваш API ключ
         })();
     </script>
+    <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
 </head>
 <body>
     <div class="menu-overlay">
         <header class="header">
-            <a href="#" class="logo">
-                <img src="./assets/img/logo1.png" width="80px"/>
+            <a href="/" class="logo">
+                <img src="./assets/img/logo.svg" width="60px"/>
                 <img src="./assets/img/logo2.png" width="80px"/>
             </a>
             <img src="./assets/img/close.svg" id="close-menu"/>
@@ -33,8 +34,8 @@
     <div class="first-screen" id="main">
         <div class="wrapper">
             <header class="header">
-                <a href="#" class="logo">
-                    <img src="./assets/img/logo1.png" width="80px"/>
+                <a href="/" class="logo">
+                    <img src="./assets/img/logo.svg" width="60px"/>
                     <img src="./assets/img/logo2.png" width="80px"/>
                 </a>
                 <nav class="nav-links">
@@ -133,12 +134,14 @@
                         <a href="https://www.facebook.com/sersun.anastasia?mibextid=ZbWKwL"><img src="./assets/img/facebook.svg" width="28px"/></a>
                         <a href="https://www.linkedin.com/in/anastasia-sersun?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="./assets/img/linkedin.svg" width="28px"/></a>
                     </div>
-                    <img src="./assets/img/first-speaker.png" width="100%" height="200px"/>
+                    <img src="./assets/img/first-speaker.png" width="100%" height="250px"/>
                     <div class="speaker-info">
                         <h5>Anastasia Sersun</h5>
-                        <p>Java developer, @Pentalog;
-                            Java mentor @TechWomen Moldova;
-                            Business tracker</p>
+                        <p>
+                            Java developer, @Pentalog;<br/>
+                            Java mentor @TechWomen Moldova;<br/>
+                            Business tracker
+                        </p>
                     </div>
                 </div>
                 
@@ -255,8 +258,11 @@
                     <option>Project management</option>
                     <option>Other</option>
                 </select>
+                <div class="g-recaptcha" data-sitekey="6LcbE4ApAAAAAGZeLCHB_O-B1XjrZ5XeHyXYiwnE" data-action="LOGIN"></div>
                 <p id="success">Email sent successfully</p>
                 <p id="error">Error sending email</p>
+                <p id="empty">Please fill in all the fields</p>
+                <p id="captcha">Please complete the captcha</p>
                 <button type="button" onclick="sendEmail()" class="send-button">SEND</button>
             </form>
         </div>
@@ -266,7 +272,7 @@
         <div class="how-to-find-us-screen-wrapper">
             <div class="header-component">
                 <span></span>
-                <h3>How-to-find-us</h3>
+                <h3>How to find us</h3>
             </div>
 
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2682.3964708475696!2d27.918420576739912!3d47.75436367776165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xacb8c8abacff6779%3A0x91b64b601fc36965!2snortek!5e0!3m2!1sru!2s!4v1708876675614!5m2!1sru!2s" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -274,8 +280,8 @@
     </div>
 
     <footer class="footer">
-        <a href="#" class="logo" style="margin: 0 auto;">
-            <img src="./assets/img/logo1.png" width="80px"/>
+        <a href="/" class="logo" style="margin: 0 auto;">
+            <img src="./assets/img/logo.svg" width="60px"/>
             <img src="./assets/img/logo2.png" width="80px"/>
         </a>
         <div class="social-icons">

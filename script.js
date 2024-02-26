@@ -1,57 +1,3 @@
-const showCards = () => {
-    document.addEventListener("DOMContentLoaded", function() {
-        const curentDate = new Date();
-        const day = curentDate.getDate();
-        const month = curentDate.getMonth() + 1;
-        const year = curentDate.getFullYear();
-        const hours = curentDate.getHours();
-        const minutes = curentDate.getMinutes();
-    
-        if(minutes >= 1){
-            const card = document.getElementById('card1');
-            const hidenCard = document.getElementById('hidden-card1');
-    
-            card.style.display = "flex";
-            hidenCard.style.display = "none";
-        }
-        
-        if (minutes >= 2){
-            const card = document.getElementById('card2');
-            const hidenCard = document.getElementById('hidden-card2');
-    
-            card.style.display = "flex";
-            hidenCard.style.display = "none";
-        }
-        
-        if (minutes >= 3){
-
-            const card = document.getElementById('card3');
-            const hidenCard = document.getElementById('hidden-card3');
-    
-            card.style.display = "flex";
-            hidenCard.style.display = "none";
-        }
-        
-        if (minutes >= 4){
-
-            const card = document.getElementById('card4');
-            const hidenCard = document.getElementById('hidden-card4');
-    
-            card.style.display = "flex";
-            hidenCard.style.display = "none";
-        }
-        
-        if (minutes >= 5){
-
-            const card = document.getElementById('card5');
-            const hidenCard = document.getElementById('hidden-card5');
-    
-            card.style.display = "flex";
-            hidenCard.style.display = "none";
-        }
-    });
-}
-
 const close = () => {
     const overlay = document.querySelector('.menu-overlay');
     overlay.style.display = "none";
@@ -82,8 +28,10 @@ const onClick = () => {
 
 }
 
+
+
 function sendEmail() {
-    var templateParams = {
+    const templateParams = {
         name: document.getElementById('name').value,
         surname: document.getElementById('surname').value,
         phone: document.getElementById('phone').value,
@@ -91,20 +39,32 @@ function sendEmail() {
         select: document.getElementById('select').value
     };
 
-    emailjs.send('service_x9bmopr', 'template_ljy5t5n', templateParams)
-        .then(function(response) {
-            const notification = document.getElementById('success');
-            notification.style.display = 'flex';
-            setTimeout(() => {
-                notification.style.display = 'none';
-            }, 2000)
-        }, function(error) {
-            const notification = document.getElementById('error');
-            notification.style.display = 'flex';
-            setTimeout(() => {
-                notification.style.display = 'none';
-            }, 2000)
-        });
+    if(
+        templateParams.name.length === 0 || templateParams.surname.length === 0 || templateParams.phone.length === 0 || templateParams.establishment.length === 0 || templateParams.select.length === 0
+    ){
+        const notification = document.getElementById('empty');
+        notification.style.display = 'flex';
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 2000)
+        var recaptchaResponse = grecaptcha.getResponse();
+        console.log(recaptchaResponse)
+    } else {
+        emailjs.send('service_x9bmopr', 'template_ljy5t5n', templateParams)
+            .then(function(response) {
+                const notification = document.getElementById('success');
+                notification.style.display = 'flex';
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                }, 2000)
+            }, function(error) {
+                const notification = document.getElementById('error');
+                notification.style.display = 'flex';
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                }, 2000)
+            });
+    }
 }
 
 onClick();
