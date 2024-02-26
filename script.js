@@ -59,7 +59,7 @@ const sendEmail = async (event) => {
             }, 2000)
 
         } else {
-            emailjs.send('service_x9bmopr', 'template_ljy5t5n', templateParams)
+            emailjs.send('service_p0yamsu', 'template_dkrs1l4', templateParams)
             .then(function(response) {
                 const notification = document.getElementById('success');
                 notification.style.display = 'flex';
