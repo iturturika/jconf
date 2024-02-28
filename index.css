@@ -314,13 +314,21 @@ select {
 }
 
 .speaker-card{
-  width: 340px;
-  background-color: #afafaf;
+  width: 320px;
+  background-color: #4337ad;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   transition: box-shadow .15s ease-in;
   position: relative;
+}
+
+.speaker-img{
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 100%;
+  margin: auto;
 }
 
 .speaker-card:hover .speaker-socials{
@@ -330,12 +338,13 @@ select {
 .speaker-info{
   background-color: #fff;
   width: 100%;
-  height: 100%;
+  height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 10px;
   padding: 10px;
+  justify-content: center;
 }
 
 .speaker-card h5{
@@ -374,7 +383,7 @@ select {
 }
 
 .speaker-card_disabled{
-  width: 340px;
+  width: 320px;
   height: 350px;
   background-color: #afafaf;
   display: flex;
@@ -549,8 +558,10 @@ select {
     width: 750px;
   }
 
-  .speakers-section{
-    row-gap: 40px;
+  .speaker-img{
+    width: 180px;
+    height: 180px;
+    margin: 20px auto;
   }
 
   .contact-us-screen-wrapper{
@@ -572,6 +583,12 @@ select {
     margin-top: auto;
   }
 
+  
+
+  .speakers-section{
+    row-gap: 40px;
+  }
+
   .second-header{
     align-self: start;
     margin-top: 30px;
@@ -579,6 +596,14 @@ select {
 
   .timer span {
     font-size: 40px;
+  }
+
+  .speaker-card{
+    width: 300px;
+  }
+
+  .speaker-card_disabled{
+    width: 300px;
   }
 
   .nav-links{
